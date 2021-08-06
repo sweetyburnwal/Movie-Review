@@ -1,51 +1,55 @@
-Welcome to Movie-Review Project
+# Welcome to Movie-Review Project
 
-Node Installation
+### Node Installation
+`brew install node`
 
-brew install node
+### Install dependencies
+`npm install`
 
-Install dependencies
+### Change directory
+`cd <path to service>`
 
-npm install
+### Install Database
+`brew install postgresql`
 
-change directory
-cd <path to service>
+### Start database
+`brew services start postgresql`
 
-Install Database
+`psql postgres`
 
-brew install postgresql
+`CREATE a role YOUR_USERNAME  with login password YOUR_PASSWORD`
 
-brew services start postgresql
+### Create database named movie
+`This database will have two tables`
+`movie table ->`
 
-psql postgres
+`id, name, releaseDate, createdAt `
 
-CREATE a role YOUR_USERNAME  with login password YOUR_PASSWORD
+`where id(integer) = unique movie id,`
 
-CREATE DATABASE movie which will have two tables
+`name(string) = movie name,`
 
-movie table ->
+`releaseDate(timestamp) = movie release date,`
 
-id, name, releaseDate, createdAt 
+`createdAt(timestamp) = time at which movie got added in the database`
 
-where id(integer) = unique movie id,
-name(string) = movie name,
-releaseDate(timestamp) = movie release date,
-createdAt(timestamp) = time at which movie got added in the database
+`review table ->`
 
-review table ->
+`id, movieId, userId/UserEmail, star(Enum, [1, 2, 3, 4, 5]), comment,createdAt`
 
-id, movieId, userId/UserEmail, star(Enum, [
-1, 2, 3, 4, 5
-]), review, createdAt
+`where id(integer) = unique review id,`
 
-where id(integer) = unique review id,
-movieId(integer) = id of the movie from the movie table which has been reviewed by the user, 
-email(string) = email of the user(which is unique) who has reviewed the movie, 
-star(enum string) = rating for the movie which is given by the user, 
-comment(string) = review submitted by the user for the movie(optional) createdAt(timestamp) = time at which comment was added in the table
+`movieId(integer) = id of the movie from the movie table which has been reviewed by the user,`
 
+`email(string) = email of the user(which is unique) who has reviewed the movie,`
 
-**Run Project** 
+`star(enum string) = rating for the movie which is given by the user,`
 
-npm run dev
+`comment(string) = review submitted by the user for the movie(optional),`
+
+`createdAt(timestamp) = time at which comment was added in the table`
+
+### Run project
+
+`npm run dev`
 
